@@ -1,0 +1,22 @@
+trigger:
+  - master
+  - develop
+
+pool: default
+
+steps:
+  - script: |
+      echo "Agent.BuildDirectory => $(Agent.BuildDirectory)"
+      echo "Agent.HomeDirectory => $(Agent.HomeDirectory)"
+      echo "Agent.WorkFolder => $(Agent.WorkFolder)"
+      echo "Agent.OSArchitecture => $(Agent.OSArchitecture)"
+      echo "Build.ArtifactStagingDirectory => $(Build.ArtifactStagingDirectory)"
+      echo "Build.Reason => $(Build.Reason)"
+      echo "Build.Repository.LocalPath => $(Build.Repository.LocalPath)"
+      echo "Build.SourceBranch	=> $(Build.SourceBranch)"
+      echo "Build.SourceBranchName	=> $(Build.SourceBranchName)"
+      echo "System.DefaultWorkingDirectory => $(System.DefaultWorkingDirectory)"
+      echo "System.PullRequest.SourceBranch => $(System.PullRequest.SourceBranch)"
+      echo "System.PullRequest.TargetBranch => $(System.PullRequest.TargetBranch)"
+      echo "System.AccessToken => $(System.AccessToken)"
+        
