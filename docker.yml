@@ -1,0 +1,37 @@
+resources:
+  containers:
+  - container: python
+    image: python
+  - container: node
+    image: node
+
+trigger:
+  - master
+  - develop
+
+pool: default
+
+stages:
+  - stage: Docker
+    displayName: Test Docker
+    
+    jobs:
+      - job: Python
+        displayName: Test Python
+        container: python
+        
+        steps:
+          - bash: python --version
+      
+      - job: Node
+        displayName: Test Node
+        container: node
+        
+        steps:
+          - bash: node --version
+
+      - job: LocalNode
+        displayName: Test local node
+        
+        steps:
+          - bash: node --version
